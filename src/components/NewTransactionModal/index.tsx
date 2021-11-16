@@ -1,4 +1,5 @@
 import Modal from "react-modal"
+import { Container } from "./styles"
 
 // falar para o modal qual o elemento root da aplicação (acessibilidade)
 Modal.setAppElement('#root')
@@ -13,8 +14,28 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
         <Modal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
+            overlayClassName="react-modal-overlay"
+            className="react-modal-content"
         >
-            <h2>Cadastrar transação</h2>
+            <Container>
+                <h2>Cadastrar transação</h2>
+
+                <input
+                    placeholder="Título"
+                />
+
+                <input
+                    placeholder="Valor"
+                />
+
+                <input
+                    placeholder="Categória"
+                />
+
+                <button type="submit">
+                    Cadastrar
+                </button>
+            </Container>
         </Modal>
     )
 }
